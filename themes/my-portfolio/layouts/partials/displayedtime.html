@@ -1,0 +1,16 @@
+{{ if .Params.projstart }}
+    {{ $dateMachine := .Params.projstart | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Params.projstart | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time> - 
+    {{ if .Params.projend }}
+        {{ $dateMachine := .Params.projend | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := .Params.projend | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ else }}
+        Present
+    {{ end }}
+{{ else }}
+    {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $dateHuman := .Date | time.Format ":date_long" }}
+    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+{{ end }}

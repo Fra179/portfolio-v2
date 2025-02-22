@@ -1,0 +1,16 @@
+<div class="languages">
+  {{- range $index, $el := . -}}
+      <!-- <p>
+    {{ .Params | jsonify (dict "indent" "  ")  }}
+
+{ "bg-color": "#204666", "draft": false, "fg-color": "white", "icon": "fa-brands fa-python", "iscjklanguage": false, "title": "Python" }</p> -->
+
+    
+    <div class="language" style='background-color: {{or .Params.bgcolor "#204666"}}; color: {{or .Params.fgcolor "white"}};'>
+      {{ if .Params.icon }}
+      <i class="{{ .Params.icon }}"></i>
+      {{ end }}
+      <p style="display: inline;">{{or .Params.title .LinkTitle}}</p>
+    </div>
+  {{- end -}}
+</div>

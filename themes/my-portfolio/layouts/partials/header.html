@@ -1,0 +1,10 @@
+<nav>
+    <div id="nav-content">
+        <h1 id="title"><a href="/">{{ .Site.Title }}</a></h1>
+        <ul class="horizontal-ul">
+            {{ range .Site.Menus.main }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</nav>

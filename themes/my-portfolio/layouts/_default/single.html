@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <div class="container" style="min-height: var(--content-size);">
+    {{ partial "articlepic.html" . }}
+   
+    <h1 style="margin-top: 0;">&gt; {{ .Title }}</h1>
+
+    {{ partial "displayedtime.html" . }}
+    {{ with .GetTerms "languages" }}
+    <div style="height: 2rem;"></div>
+    {{ partial "taxonomy/languages.html" . }}
+    {{ end }}
+
+    <div style="height: 2rem;"></div>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <!-- {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} -->
+
+    {{ if .Params.author }}
+    <div id="sign">
+      <p>- {{ .Params.author }}</p>
+    </div>
+    {{ end }}
+  </div>
+{{ end }}

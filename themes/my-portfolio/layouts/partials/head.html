@@ -1,0 +1,10 @@
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+{{ partial "head/meta.html" . }}
+
+<link rel="shortcut icon" href="{{ .Site.Params.propic }}" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css">
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}

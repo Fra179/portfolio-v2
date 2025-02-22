@@ -1,0 +1,25 @@
+<meta name="color-scheme" content="light"> <!-- content="light dark"> -->
+<meta name="author" content="{{ .Site.Params.author }}">
+
+{{ $description := .Site.Params.description }}
+{{ if .Summary }}
+{{ $description = .Summary | plainify | strings.Truncate 150 }}
+{{ end }}
+{{ $title := printf "%s | %s" .Title site.Title }}
+{{ if .IsHome }}{{ $title = site.Title }}{{ end }}
+
+<meta name="description" content="{{ $description }}">
+<meta name="keywords" content="{{ .Site.Params.keywords }}">
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://metatags.io/" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://metatags.io/" />
+<meta property="twitter:title" content="{{ $title }}" />
+<meta property="twitter:description" content="{{ $description }}" />
+<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />

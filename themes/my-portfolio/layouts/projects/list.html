@@ -1,0 +1,29 @@
+{{ define "main" }}
+    <!--
+    <p>
+        {{ .Pages | jsonify (dict "indent" "  ")  }}
+    </p> -->
+    <div class="container">
+        <h1 style="margin: 0; margin-bottom: 4rem;">&gt; {{ .Title }}</h1>
+        {{ .Content }}
+
+        {{ partial "nocontent.html" . }}
+
+        <div class="grid-container">
+            {{ range .Pages }}
+            <div class="item">
+                {{ if .Params.cover }}
+                <img src="{{ .Params.cover }}" alt="Project cover" class="cover-image">
+                {{ end }}
+                <div>
+                    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+                    {{ strings.Truncate 200 .Summary }}
+
+                    {{ with .GetTerms "languages" }}{{ partial "taxonomy/languages.html" . }}{{ end }}
+                    <div style="height: 2rem;"></div>
+                </div>
+            </div>            
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

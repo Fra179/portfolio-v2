@@ -1,0 +1,56 @@
+baseURL = 'https://francescodb.me/'
+languageCode = 'en-us'
+title = 'FrancescoDB'
+theme = 'my-portfolio'
+
+[[menus.main]]
+name = 'About me'
+url = '/about/'
+weight = 2
+
+
+[[menus.main]]
+name = 'Projects'
+url = '/projects/'
+weight = 3
+
+[[menus.main]]
+name = 'Posts'
+url = '/posts/'
+weight = 4
+
+# [[menus.main]]
+# name = 'CV'
+# url = '/posts/'
+# weight = 5
+
+[params]
+  from = 2020
+  propic = '/assets/io.png'
+  author = 'Francesco De Benedittis'
+  subtitle = 'Junior Developer'
+  keywords = 'portfolio,developer,backend developer,ai,computer vision'
+  description = "My personal portfolio"
+
+[[params.socials]]
+url = 'https://www.linkedin.com/in/francescodb4/'
+icon = 'fa-brands fa-linkedin'
+weight = 1
+
+[[params.socials]]
+url = 'https://github.com/Fra179'
+icon = 'fa-brands fa-github'
+weight = 2
+
+[[params.socials]]
+url = 'https://t.me/Francesco_DB'
+icon = 'fa-brands fa-telegram'
+weight = 3
+
+[[params.socials]]
+url = 'mailto:contact@francescodb.it'
+icon = 'fas fa-envelope'
+weight = 4
+
+[taxonomies]
+  language = 'languages'

@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <div class="container">
+    <h1 style="margin: 0; margin-bottom: 4rem;">&gt; {{ .Title }}</h1>
+    {{ .Content }}
+
+    {{ partial "nocontent.html" . }}
+
+    <div class="posts">
+      {{ range .Pages }}
+        <div class="post">
+          <h2 style="margin-bottom: 1.25rem;"><a href="{{ .RelPermalink }}">&gt; {{ .LinkTitle }}</a></h2>
+          <p style="margin-top: 0;">{{ .Date | time.Format ":date_long" }}</p>
+          <p>{{ strings.Truncate 200 .Summary }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

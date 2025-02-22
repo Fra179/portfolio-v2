@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+<div class="centered" style="min-height: var(--content-size);">
+    <div id="about">
+        <img src="{{ .Site.Params.propic }}" class="rounded" id="propic" alt="propic" width="20rem">
+        <h1>{{ .Site.Params.author }}</h1>
+        <h2 id="subtitle">{{ .Site.Params.subtitle }}</h2>
+        <ul class="horizontal-ul" id="socials">
+            {{ range .Site.Params.socials }}
+            <li><a href="{{ .url }}"><i class="{{ .icon }}"></i></a></li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+{{ end }}
