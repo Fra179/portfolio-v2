@@ -20,7 +20,8 @@
                     {{ strings.Truncate 200 .Summary }}
 
                     {{ with .GetTerms "languages" }}{{ partial "taxonomy/languages.html" . }}{{ end }}
-                    <div style="height: 2rem;"></div>
+                    <!-- <div style="height: 2rem;"></div> -->
+                    
                 </div>
             </div>            
             {{ end }}

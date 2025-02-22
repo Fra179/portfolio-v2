@@ -184,8 +184,12 @@ footer p {
 .languages {
   display: flex;
   gap: 1rem;
-  margin: 0;
+  margin: 2rem 0;
   flex-flow: row wrap;
+}
+
+.language p {
+  margin: 0;
 }
 
 #articlepic {
